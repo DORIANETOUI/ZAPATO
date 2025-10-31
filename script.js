@@ -1,4 +1,3 @@
-
 let allProducts = []; 
 
 
@@ -158,6 +157,7 @@ function updateCart(cart) {
         }
     }
 }
+
 // 3. Fonction d'Ajout au Panier
 function addToCart(productId) {
     const cart = getCart();
@@ -184,26 +184,51 @@ function addToCart(productId) {
     }
 }
 
-// 4. Événement pour écouter les clics sur TOUS les boutons "Ajouter au panier"
+// ÉCOUTEUR UNIQUE POUR TOUS LES CLICS
 document.addEventListener('click', function(event) {
-    // Vérifie si l'élément cliqué ou son parent le plus proche est un bouton ayant l'ID ciblé
-    const targetId = event.target.closest('button')?.id;
-
-    if (targetId === 'cart-button' || targetId === 'floating-cart-button') {
-        event.preventDefault(); // Empêche le comportement par défaut (si déjà défini dans HTML)
+    // Gestion de l'ajout au panier
+    if (event.target.classList.contains('add-to-cart-btn')) {
+        event.preventDefault();
+        const productId = event.target.getAttribute('data-product-id');
+        addToCart(productId);
+        return; // Important : arrêter la propagation
+    }
+    
+    // Gestion de l'ouverture du panier
+    const targetButton = event.target.closest('button');
+    if (targetButton && (targetButton.id === 'cart-button' || targetButton.id === 'floating-cart-button')) {
+        event.preventDefault();
         
         // 1. Mise à jour du contenu du panier
         renderCart(); 
         
         // 2. Ouverture manuelle de la modale Panier après le rendu
         const modalElement = document.getElementById('cartModal');
-        // Nécessite une nouvelle instance si elle n'existe pas, sinon utilise celle existante
         const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
         modalInstance.show();
+        return;
+    }
+    
+    // Gestion du retrait d'un article
+    if (event.target.classList.contains('remove-from-cart-btn')) {
+        const indexToRemove = event.target.getAttribute('data-index');
+        let cart = getCart();
+        
+        // Retirer l'élément du tableau par son index
+        cart.splice(indexToRemove, 1);
+        
+        // Mettre à jour le Local Storage et le Compteur Navbar
+        updateCart(cart);
+        
+        // Re-rendre le panier immédiatement pour mettre à jour la modale
+        renderCart();
     }
 });
+
 // 5. Appel initial pour charger le compteur du panier au démarrage
-document.addEventListener('DOMContentLoaded', updateCart(getCart()));
+document.addEventListener('DOMContentLoaded', function() {
+    updateCart(getCart());
+});
 
 
 // LOGIQUE DE GESTION DU PANIER (RENDU)
@@ -212,7 +237,6 @@ document.addEventListener('DOMContentLoaded', updateCart(getCart()));
 // 1. Cibler les éléments de la nouvelle modale
 const cartModalBody = document.getElementById('cartModalBody');
 const cartSummary = document.getElementById('cart-summary');
-const cartButtonNavbar = document.getElementById('cart-button');
 
 // 2. Fonction de Rendu du Panier
 function renderCart() {
@@ -270,34 +294,9 @@ function renderCart() {
     document.getElementById('checkout-button').disabled = false;
 }
 
-// 6. Gestion du Clic sur le bouton "Panier" de la Navbar
-cartButtonNavbar.addEventListener('click', function() {
-    renderCart(); // Charger le contenu AVANT l'ouverture
-    const modalInstance = new bootstrap.Modal(document.getElementById('cartModal'));
-    modalInstance.show();
-});
 
-// 7. Fonction pour retirer un article du panier
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('remove-from-cart-btn')) {
-        const indexToRemove = event.target.getAttribute('data-index');
-        let cart = getCart();
-        
-        // Retirer l'élément du tableau par son index
-        cart.splice(indexToRemove, 1);
-        
-        // Mettre à jour le Local Storage et le Compteur Navbar
-        updateCart(cart);
-        
-        // Re-rendre le panier immédiatement pour mettre à jour la modale
-        renderCart(); 
-    }
-});
-
-
-// ====================================
 // LOGIQUE DE COMMANDE WHATSAPP
-// ====================================
+
 
 // Votre numéro de téléphone (à remplacer par le vrai numéro ZAPATO)
 const WHATSAPP_NUMBER = '2250140258592'
@@ -351,7 +350,7 @@ document.getElementById('checkout-button').addEventListener('click', sendWhatsAp
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('service-worker.js')
             .then(registration => {
                 console.log('ServiceWorker enregistré avec succès. Scope:', registration.scope);
             })
@@ -360,5 +359,3 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
-
-
