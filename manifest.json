@@ -1,0 +1,28 @@
+{
+  "name": "ZAPATO | Boutique de sacs en Ligne",
+  "short_name": "ZAPATO",
+  "description": "Découvrez la nouvelle collection de sacs à main élégants et modernes de ZAPATO.",
+  "start_url": "./index.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#343a40",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

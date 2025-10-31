@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "name": "Sac à Main Classique",
+    "description": "Un sac élégant et intemporel en cuir véritable, parfait pour le quotidien.",
+    "price": 129.99,
+    "image_url": "https://plus.unsplash.com/premium_photo-1678739395192-bfdd13322d34?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FjfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500"
+  },
+  {
+    "id": 2,
+    "name": "Sac à Dos Urbain",
+    "description": "Idéal pour les étudiants et les professionnels. Compartiment rembourré pour ordinateur portable.",
+    "price": 89.50,
+    "image_url": "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FjfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500"
+  },
+  {
+    "id": 3,
+    "name": "Pochette de Soirée",
+    "description": "Petite pochette chic avec chaîne dorée, parfaite pour les événements formels.",
+    "price": 45.00,
+    "image_url": "https://plus.unsplash.com/premium_photo-1759432614301-b75386875a20?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=500"
+    
+  },
+  {
+    "id": 4,
+    "name": "Sac Bandoulière Vintage",
+    "description": "Design rétro en toile résistante avec des empiècements en similicuir.",
+    "price": 65.99,
+    "image_url": "https://plus.unsplash.com/premium_photo-1723924907666-94cd23c21cfc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=500"
+  },
+  {
+    "id": 5,
+    "name": "Sac de Voyage XL",
+    "description": "Grand sac fourre-tout, idéal pour les week-ends ou comme sac de sport.",
+    "price": 99.00,
+    "image_url": "https://plus.unsplash.com/premium_photo-1678987616647-de8c83fa15a3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=500"
+  },
+  {
+    "id": 6,
+    "name": "Sac à Chaîne Matelassé",
+    "description": "Petit sac carré matelassé avec une longue chaîne pour un look sophistiqué.",
+    "price": 75.25,
+    "image_url": "https://plus.unsplash.com/premium_photo-1678739395337-6f558af91f65?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=500"
+  },
+
+  
+    {
+        "id": 7,
+        "name": "Sac de Ville Classique",
+        "description": "Un sac bandoulière élégant en cuir vegan, parfait pour un usage quotidien et les sorties en ville. Intérieur spacieux.",
+        "price": 89.99,
+        "category": "Sac à main",
+        "image_url": "https://plus.unsplash.com/premium_photo-1680392544041-d89413b561ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2FjfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500"
+    },
+    {
+        "id": 8,
+        "name": "Pochette Cuir Vintage",
+        "description": "Petite pochette minimaliste en cuir brun vieilli. Idéale pour les soirées ou pour ranger l'essentiel avec style.",
+        "price": 55.50,
+        "category": "Pochette",
+        "image_url": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U0FDfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500"
+    },
+    {
+        "id": 9,
+        "name": "Sac Seau Tressé",
+        "description": "Design moderne avec une texture tressée unique. Fermeture par cordon coulissant et sangle ajustable.",
+        "price": 110.00,
+        "category": "Sac Seau",
+        "image_url": "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFNBQ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
+    },
+    {
+        "id": 10,
+        "name": "Bottines Hivernales",
+        "description": "Cuir robuste et doublure chaude. Parfaites pour affronter les jours froids avec style.",
+        "price": 129.00,
+        "category": "Bottes",
+        "image_url": "https://plus.unsplash.com/premium_photo-1678739395192-bfdd13322d34?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FjfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500"
+    },
+    {
+        "id": 11,
+        "name": "Grand Sac Cabas Noir",
+        "description": "Cabas spacieux en toile renforcée et poignées en cuir. Idéal pour le travail ou le week-end.",
+        "price": 75.99,
+        "category": "Cabas",
+        "image_url": "https://plus.unsplash.com/premium_photo-1680390327010-09e627ebd475?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fFNBQ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
+    },
+    {
+        "id": 12,
+        "name": "Mini Sac Vert Pomme",
+        "description": "Un petit sac ultra tendance et coloré pour apporter une touche de peps à n'importe quelle tenue.",
+        "price": 45.00,
+        "category": "Mini Sac",
+        "image_url": "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFNBQ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
+    },
+    {
+        "id": 13,
+        "name": "Sacoche Business Cuir",
+        "description": "Sacoche professionnelle en cuir véritable avec compartiment pour ordinateur portable 13 pouces.",
+        "price": 149.50,
+        "category": "Sacoche",
+        "image_url": "https://plus.unsplash.com/premium_photo-1679314408041-45d1a3c45dee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=500"
+    }
+]

@@ -1,0 +1,160 @@
+/*
+ * STYLE.CSS POUR ZAPATO
+ * Thème : Épuré, Professionnel, Optimisé pour PWA (minimalisme et performance)
+ */
+
+/* ====================================
+   1. STYLES GÉNERAUX ET TYPOGRAPHIE
+   ==================================== */
+:root {
+    /* Définition de la couleur principale ZAPATO */
+    --zapato-primary: #343a40; /* Gris très foncé, presque noir */
+    --zapato-secondary: #0d6efd; /* Bleu Bootstrap par défaut (pour le prix) */
+}
+
+body {
+    /* Applique la police Poppins importée dans index.html */
+    font-family: 'Poppins', sans-serif; 
+    /* Fond légèrement cassé pour un aspect premium */
+    background-color: #f8f9fa; 
+    color: var(--zapato-primary);
+}
+
+/* Ajustement des titres pour un look plus léger */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; /* Semi-gras */
+}
+
+/* ====================================
+   2. NAVBAR ET ÉLÉMENTS SPÉCIFIQUES
+   ==================================== */
+
+.navbar-brand {
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 700 !important; /* Gras pour le logo */
+    color: var(--zapato-primary) !important;
+    text-transform: uppercase;
+}
+
+#cart-button {
+    font-weight: 600;
+    /* Ajuste la couleur du bouton panier */
+    color: var(--zapato-primary); 
+    border-color: var(--zapato-primary);
+    transition: all 0.2s ease;
+}
+
+#cart-button:hover {
+    background-color: var(--zapato-primary);
+    color: white;
+}
+
+/* ====================================
+   3. CARTES PRODUIT (UNIFORMITÉ & INTERACTIVITÉ)
+   ==================================== */
+
+.product-card {
+    /* Transition pour une interaction fluide (ombre et zoom) */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer; 
+    /* Assure que rien ne dépasse l'arrondi et le zoom est contenu */
+    overflow: hidden; 
+}
+
+/* Effet d'élévation au survol */
+.product-card:hover {
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important; /* Ombre plus douce */
+    transform: translateY(-5px); /* Légère élévation de la carte */
+}
+
+/* CORRECTION CRUCIALE DE L'IMAGE */
+.product-card .card-img-top {
+    /* Hauteur fixe pour garantir l'uniformité des cartes */
+    height: 300px; 
+    /* Object-fit assure que l'image couvre l'espace sans se déformer */
+    object-fit: cover; 
+    width: 100%; 
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transition plus dynamique */
+}
+
+/* Zoom élégant sur l'image au survol de la carte */
+.product-card:hover .card-img-top {
+    transform: scale(1.05); 
+}
+
+/* Corps de la carte */
+.product-card .card-body {
+    padding: 1.25rem; /* Augmente légèrement le padding pour aérer */
+}
+
+/* Prix */
+.product-card .fs-5.fw-bold.text-primary {
+    color: var(--zapato-primary) !important; /* Prix en couleur sombre ZAPATO */
+    font-size: 1.35rem !important; /* Augmente légèrement la taille du prix */
+}
+
+.quick-view-btn {
+    font-size: 0.85rem; 
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+/* ====================================
+   4. MODALES
+   ==================================== */
+/* Assure un bon style pour le corps de la modale Quick View */
+#quickViewBody {
+    padding: 2rem !important;
+}
+
+/* Rend l'image de la modale légèrement plus grande */
+#quickViewModal img {
+    max-height: 450px; 
+    width: auto;
+}
+
+/* Assure que la modale de Panier est bien stylisée */
+#cartModal .modal-footer {
+    border-top: none;
+    padding-top: 0;
+}
+
+
+.floating-cart-btn {
+    /* Positionnement fixe sur l'écran */
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    
+    /* Taille et style ronds */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    /* Assure qu'il reste au-dessus des autres éléments */
+    z-index: 1050; 
+    
+    /* Centre l'icône SVG à l'intérieur du bouton */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+    /* Ombre subtile pour le faire "flotter" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Le badge du compteur */
+#cart-count-mobile {
+    /* Ajustement de la taille du badge */
+    padding: 0.35em 0.65em;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Cache le bouton "Panier" original sur petit écran pour éviter la duplication */
+@media (max-width: 991.98px) { /* Taille 'lg' de Bootstrap */
+    #cart-button {
+        display: none !important;
+    }
+}   
