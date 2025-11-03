@@ -2,7 +2,7 @@
   "name": "ZAPATO | Boutique de sacs en Ligne",
   "short_name": "ZAPATO",
   "description": "Découvrez la nouvelle collection de sacs à main élégants et modernes de ZAPATO.",
-  "start_url": "ZAPATO/index.html",
+  "start_url": "/ZAPATO/",
   "scope": "/ZAPATO/",
   "display": "standalone",
   "background_color": "#f8f9fa",

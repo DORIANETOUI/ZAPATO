@@ -42,7 +42,7 @@ self.addEventListener('fetch', event => {
         }).catch(() => {
             // ✅ Fallback offline
             if (event.request.destination === 'document') {
-                return caches.match('/index.html');
+                return caches.match('/ZAPATO/index.html');
             }
         })
     );
