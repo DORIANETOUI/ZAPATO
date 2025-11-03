@@ -1,13 +1,15 @@
-const CACHE_NAME = 'zapato-v2';
+const CACHE_NAME = 'zapato-v3';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/script.js',
-    '/products.json',
-    '/manifest.json',
-    '/icons/icon-192x192.png',
-    '/icons/icon-512x512.png'
+    '/ZAPATO/',
+    '/ZAPATO/index.html',
+    '/ZAPATO/style.css',
+    '/ZAPATO/script.js',
+    '/ZAPATO/products.json',
+    '/ZAPATO/manifest.json',
+    '/ZAPATO/icons/icon-192x192.png',
+    '/ZAPATO/icons/icon-512x512.png',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'
 ];
 
 self.addEventListener('install', event => {

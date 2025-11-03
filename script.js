@@ -359,3 +359,64 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+
+
+// GESTION DE L'INSTALLATION MANUELLE DE LA PWA (A2HS)
+
+// 1. Variable pour stocker l'événement de téléchargement du navigateur
+let deferredPrompt; 
+
+// 2. Écouter l'événement avant l'affichage de l'invite
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Empêcher l'invite par défaut de s'afficher (afin qu'on la gère manuellement)
+    e.preventDefault();
+    
+    // Stocker l'événement pour pouvoir l'utiliser plus tard
+    deferredPrompt = e;
+    
+    // Afficher le bouton d'installation
+    const installBtn = document.getElementById('install-app-btn');
+    if (installBtn) {
+        installBtn.style.display = 'inline-flex';
+    }
+    
+    console.log('L\'événement beforeinstallprompt a été enregistré.');
+});
+
+// 3. Fonction pour déclencher l'installation via le bouton
+function promptInstall() {
+    if (deferredPrompt) {
+        // Afficher l'invite native du navigateur
+        deferredPrompt.prompt();
+        
+        // Attendre que l'utilisateur choisisse (Accepter ou Refuser)
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('L\'utilisateur a accepté l\'installation (A2HS).');
+            } else {
+                console.log('L\'utilisateur a refusé l\'installation (A2HS).');
+            }
+            
+            // L'événement ne peut être utilisé qu'une seule fois. On le vide.
+            deferredPrompt = null;
+            
+            // Cacher le bouton après l'installation ou le rejet
+            const installBtn = document.getElementById('install-app-btn');
+            if (installBtn) {
+                installBtn.style.display = 'none';
+            }
+        });
+    }
+}
+
+// 4. Lier la fonction promptInstall au bouton dans le DOM après le chargement
+document.addEventListener('DOMContentLoaded', () => {
+    // Le DOMContentLoaded était déjà utilisé pour loadAndRenderProducts, nous ajoutons la logique du bouton ici.
+    const installBtn = document.getElementById('install-app-btn');
+    if (installBtn) {
+        // Par défaut on cache le bouton, il sera affiché par beforeinstallprompt
+        installBtn.style.display = 'none';
+        installBtn.addEventListener('click', promptInstall);
+    }
+});

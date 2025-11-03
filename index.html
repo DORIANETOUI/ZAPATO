@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,6 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="ZAPATO">
+    <base href="/ZAPATO/">
     
     <link rel="apple-touch-icon" href="icons/icon-192x192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512x512.png">
@@ -51,9 +52,14 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-outline-success fw-bold me-2" id="install-app-btn" style="display: none;">
+                         Télécharger l'App 📱
+                    </button>
+
                     <button class="btn btn-outline-dark fw-bold" id="cart-button">
                         Panier (<span id="cart-count">0</span>)
                     </button>
+
                 </div>
             </div>
         </nav>
